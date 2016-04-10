@@ -76,11 +76,12 @@ public static void testmirrorVerticalRightToLeft(){
 
 
 public static void testChromakey(){
-	Picture pink = new Picture ("blue-mark.jpg");
-	Picture space = new Picture ("space.jpg");
+	Picture mark = new Picture ("blue-mark.jpg");
+	Picture space = new Picture ("moon-surface.jpg");
 	
-pink.chromaKey(space);
-pink.explore();
+mark.chromaKey(space);
+
+mark.explore();
 }
 
 

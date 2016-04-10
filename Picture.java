@@ -178,19 +178,36 @@ public class Picture extends SimplePicture
   
   
   public void chromaKey(Picture a ){
+	  /*
+	   * From 
+	   * To
+	   * (new image?)
+	   *A on to something 
+	   * 
+	   */
+	  
+	  // Where we are getting it from
 	  Pixel[][] pixels = this.getPixels2D();
-	  Pixel toPix;
+	  Pixel [][]toPix = a.getPixels2D();
 	  
 	  for (int x = 0; x< pixels.length; x++){
-		  for (int y = 0; y<getWidth();y++){
+		  for (int y = 0; y<pixels[0].length;y++){
 			  
+			
 			  
-			  if (pixels[x][y].getBlue()>50 && (pixels[x][y].getRed()>50 &&  pixels[x][y].getRed()< 180) && pixels[x][y].getGreen()>70 ){
-				  toPix = a.getPixel(x, y);	
-				  pixels[x][y] = toPix;
+			  if (pixels[x][y].getBlue()>=25 && pixels[x][y].getRed()<30 && (pixels[x][y].getGreen()>15&&pixels[x][y].getGreen()<47)){                
+				  pixels[x][y] .setColor(toPix[x][y].getColor());
+				  
 			  }
+			  
+			 
 		  }
+		 
+		  
 	  }
+	  
+	 
+	  
 	  
 	  
 	  
