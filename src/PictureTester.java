@@ -85,10 +85,25 @@ mark.explore();
 }
 
 
+
+public static void testEncode(){
+	
+	Picture beach = new Picture ("beach.jpg");
+	Picture code = new Picture ("msg.jpg");
+	beach.code(code, "open");
+	beach.decode("open");
+	
+	beach.explore();
+}
+
+
   /** Main method for testing.  Every class can have a main
     * method in Java */
   public static void main(String[] args)
   {
+	  
+	  
+	  testEncode();
     // uncomment a call here to run a test
     // and comment out the ones you don't want
     // to run
@@ -109,7 +124,7 @@ mark.explore();
 	//  testmirrorVerticalRightToLeft();
     //testEdgeDetection();
     //testEdgeDetection2();
-    testChromakey();
+   // testChromakey();
     //testEncodeAndDecode();
     //testGetCountRedOverValue(250);
     //testSetRedToHalfValueInTopHalf();

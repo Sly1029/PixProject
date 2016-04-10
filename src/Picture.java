@@ -15,6 +15,8 @@ import java.util.List; // resolves problem with java.awt.List and java.util.List
  */
 public class Picture extends SimplePicture 
 {
+	
+	private String code;
   ///////////////////// constructors //////////////////////////////////
   
   /**
@@ -318,26 +320,65 @@ public class Picture extends SimplePicture
   
   
   
-public void code(Picture b){
+public void code(Picture b,String l){
 
 Pixel[][] pix  = this.getPixels2D();
-
+Pixel[][] pix2 = b.getPixels2D();
 for (int x = 0; x< pix.length;x++){
 
 	for (int y = 0; y<pix[0].length; y++){
 
 	if (pix[x][y].getRed() %2 == 0){
-	pix[x][y]
+	pix[x][y].setRed(pix[x][y].getRed()+1);
 	}
 
 }
 
 	}
 
+for (int a = 0; a<pix2.length;a++){
+	for (int j = 0; j<pix2[0].length;j++){
+		if (pix2[a][j].getRed() != 0){
+			pix[a][j].setRed(pix[a][j].getRed()-1);
+		}
+		
+		
+	}
+}
 
+code = l;
 
 }
 
+
+public void decode(String a ){
+	if (code == a ){
+		Pixel [][] pix = this.getPixels2D();
+		
+		
+		for (int x = 0; x<pix.length;x++){
+			for (int b = 0; b<pix[0].length;b++){
+				
+				if (pix[x][b].getRed() %2 == 0){
+					pix[x][b].setBlue(255);
+					pix[x][b].setGreen(255);
+					pix[x][b].setRed(255);
+				}
+				else {
+					pix[x][b].setBlue(0);
+					pix[x][b].setGreen(0);
+					pix[x][b].setRed(0);
+				}
+				
+				
+			}
+		}
+		
+	}
+	
+	
+	
+}
 
 
   public void copy(Picture fromPic, 
