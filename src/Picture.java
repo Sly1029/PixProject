@@ -318,6 +318,28 @@ public class Picture extends SimplePicture
   
   
   
+public void code(Picture b){
+
+Pixel[][] pix  = this.getPixels2D();
+
+for (int x = 0; x< pix.length;x++){
+
+	for (int y = 0; y<pix[0].length; y++){
+
+	if (pix[x][y].getRed() %2 == 0){
+	pix[x][y]
+	}
+
+}
+
+	}
+
+
+
+}
+
+
+
   public void copy(Picture fromPic, 
           int startRow, int startCol, int endRow, int endCol)
 {
